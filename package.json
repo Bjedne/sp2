@@ -1,10 +1,14 @@
 {
   "name": "semester-project-2",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "description": "npm package for semester project 2 containing bootstrap, ESLint and Prettier as dependecies",
   "type": "module",
   "main": "src/index.js",
   "scripts": {
+    "build": "sass src/scss:dist/css",
+    "watch": "sass src/scss:dist/css --watch",
+    "start": "live-server",
+    "dev": "npm-run-all --parallel watch start",
     "test": "node src/index.js",
     "format": "prettier -w src/**/*.js",
     "lint": "eslint src/**/*.js",
@@ -30,7 +34,10 @@
     "globals": "^15.1.0",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
-    "prettier": "^3.2.5"
+    "live-server": "^1.1.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.2.5",
+    "sass": "^1.76.0"
   },
   "lint-staged": {
     "*.js": [
@@ -43,5 +50,8 @@
     "*.scss": [
       "prettier --write"
     ]
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.0"
   }
 }
