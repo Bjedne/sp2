@@ -1,6 +1,6 @@
 {
   "name": "semester-project-2",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "npm package for semester project 2 containing bootstrap, ESLint and Prettier as dependecies",
   "type": "module",
   "main": "src/index.js",
