@@ -1,6 +1,6 @@
 {
   "name": "semester-project-2",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "npm package for semester project 2 containing bootstrap, ESLint and Prettier as dependecies",
   "type": "module",
   "main": "src/index.js",
@@ -8,7 +8,8 @@
     "test": "node src/index.js",
     "format": "prettier -w src/**/*.js",
     "lint": "eslint src/**/*.js",
-    "lint-fix": "eslint src/**/*.js --cache --fix"
+    "lint-fix": "eslint src/**/*.js --cache --fix",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,20 @@
     "@eslint/js": "^9.1.1",
     "eslint": "^9.1.1",
     "globals": "^15.1.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
     "prettier": "^3.2.5"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.html": [
+      "prettier --write"
+    ],
+    "*.scss": [
+      "prettier --write"
+    ]
   }
 }
