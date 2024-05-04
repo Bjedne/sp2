@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Inserts profile name</title>
+  </head>
+  <body>
+    <header>
+      <!-- Hamburger menu (opens sidebar that covers the screen and transforms to an "x")
+         Hamburger menu:
+              <ul>
+                  <li>Home</li>  href="../../index.html"
+                  <li>All Listings</li>  href="./listings.html"
+                  <li>Profile</li>    href="./profile.html"
+                  <li>Sign in / Sign up</li>  href="./login.html"
+              </ul>
+          -->
+      <h1>BESTBIDS</h1>
+      <!-- Avatar icon (links to href="./profile.html") -->
+    </header>
+
+    <main>
+      <div>
+        <!-- API inserts the avatar img, also has an edit icon that opens a modal -->
+        <!-- Change avatar modal:
+            Box, input labeled "Change avatar" and a submit button
+        -->
+        <!-- API inserts the username -->
+        <!-- API inserts the balance-->
+      </div>
+      <div>
+        <h3>Your listings:</h3>
+        <!-- API inserts listings that has the same author as the user 
+       API Insert:
+            <div>
+                <img src="$[itemimg]">
+                <h3>$[itemname]</h3>
+                <p>$[itemprice]</p>
+                <p>$[itemdeadline]</p>
+            </div>
+        -->
+        <button>Sign Out</button>
+        <!-- Removes token from local storage and redirects user to landing page -->
+      </div>
+    </main>
+  </body>
+</html>
