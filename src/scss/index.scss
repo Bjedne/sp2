@@ -1,4 +1,4 @@
-@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap");
 
 body {
   margin: 0;
@@ -12,8 +12,20 @@ body {
   object-fit: cover;
 }
 
+.avatarIcon {
+  height: 30px;
+  width: 30px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.navbar-toggler-icon {
+  color: white;
+}
+
 h1 {
-  font-size: 32px;
+  font-weight: bold;
+  font-family: Inter;
 }
 
 h3 {
@@ -24,3 +36,6 @@ h3 {
 p {
   font-size: 12px;
 }
+
+$blue: #424769 !default;
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
