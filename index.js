@@ -17,11 +17,14 @@ async function landingListings() {
       const options = { day: "numeric", month: "numeric", year: "2-digit" };
       const formattedEndDate = endDate.toLocaleDateString(undefined, options);
 
+      const latestBid = listing.bids[listing.bids.length - 1];
+      const latestBidAmount = latestBid ? latestBid.amount : "No bids";
+
       landingContainer.innerHTML += `<div class="col-5">
       <img class="thumbnailImage" src="${listing.media[0].url}">
       <h3>${listing.title}</h3>
       <div class="d-flex">
-        <p class="me-3">100 credits</p>
+        <p class="me-3"> ${latestBidAmount}</p>
         <p>Ends: ${formattedEndDate}</p>
       </div>
         </div>`;

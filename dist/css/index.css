@@ -10708,11 +10708,20 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+body {
+  margin: 0;
+  line-height: inherit;
+}
+
 .thumbnailImage {
   width: 150px;
   height: 100px;
   border-radius: 1em;
   object-fit: cover;
+}
+
+h1, .h1 {
+  font-size: 32px;
 }
 
 h3, .h3 {
