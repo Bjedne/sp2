@@ -10709,7 +10709,19 @@ textarea.form-control-lg {
   }
 }
 .thumbnailImage {
-  width: 100%;
+  width: 150px;
+  height: 100px;
+  border-radius: 1em;
+  object-fit: cover;
+}
+
+h3, .h3 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+p {
+  font-size: 12px;
 }
 
 /*# sourceMappingURL=index.css.map */
