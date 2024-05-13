@@ -26,10 +26,11 @@
           class="login-form mb-2"
           id="login"
         >
-          <label for="" class="mb-1 inter">Username</label>
+          <label for="usernameReg" class="mb-1 inter">Username</label>
           <input
             type="text"
             name="username"
+            id="usernameReg"
             class="form-control mb-3"
             placeholder="Enter your username"
             maxlength="20"
@@ -37,25 +38,35 @@
             pattern="^[\w]+$"
             title="Username must only contain lower case, upper case, numbers and underscore (_). Example: My_User123"
           />
-          <label for="" class="mb-1 inter">Email</label>
+          <label for="emailReg" class="mb-1 inter">Email</label>
           <input
             type="text"
             name="email"
+            id="emailReg"
             class="form-control mb-3"
             placeholder="Enter your email address"
             required
-            pattern="^[\w]+$"
+            pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
+            title="Only @(stud.)noroff.no domains are allowed to register."
           />
-          <label for="" class="mb-1 inter">Password</label>
+          <label for="passwordReg" class="mb-1 inter">Password</label>
           <input
             type="password"
             name="password"
-            class="form-control mb-4"
+            id="passwordReg"
+            class="form-control mb-3"
             placeholder="Enter your password"
             minlength="8"
             required
-            pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
-            title="Only @(stud.)noroff.no domains are allowed to register."
+          />
+          <label for="avatarReg" class="mb-1 inter">Avatar URL</label>
+          <input
+            required
+            type="url"
+            class="form-control mb-4"
+            id="avatarReg"
+            name="avatar"
+            placeholder="Avatar URL"
           />
           <button type="button" class="btn btn-primary w-100 p-2 mt-4">
             Create an Account

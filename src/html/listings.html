@@ -4,38 +4,112 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>All Listings</title>
-    <description>
-      Check out all the listings posted here! You'll be surprised if you can't
-      find something interesting.</description
-    >
+    <meta
+      name="description"
+      content="Check out all the listings posted here! You'll be surprised if you can't
+      find something interesting."
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script src="../js/api/listings.js" type="module" defer></script>
+    <link rel="stylesheet" href="../../dist/css/index.css" />
   </head>
   <body>
     <header>
-      <!-- Hamburger menu (opens sidebar that covers the screen and transforms to an "x")
-       Hamburger menu:
-            <ul>
-                <li>Home</li>  href="../../index.html"
-                <li>All Listings</li>  href="./listings.html"
-                <li>Profile</li>    href="./profile.html"
-                <li>Sign in / Sign up</li>  href="./login.html"
-            </ul>
-        -->
-      <h1>BESTBIDS</h1>
-      <!-- Avatar icon (links to href="./profile.html") -->
+      <nav class="navbar navbar-dark fixed-top bg-primary">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <h1 class="navbar-brand text-white mt-2 inter">BESTBIDS</h1>
+          <img
+            class="avatarIcon"
+            src="https://fastly.picsum.photos/id/40/4106/2806.jpg?hmac=MY3ra98ut044LaWPEKwZowgydHZ_rZZUuOHrc3mL5mI"
+          />
+
+          <div
+            class="offcanvas offcanvas-start text-bg-primary"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <div class="offcanvas-header">
+              <button
+                type="button"
+                class="btn-close btn-close-white"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+              <h1
+                class="offcanvas-title mx-auto inter"
+                id="offcanvasNavbarLabel"
+              >
+                BESTBIDS
+              </h1>
+            </div>
+
+            <div class="offcanvas-body inter">
+              <ul class="navbar-nav flex-grow-1 pe-3 ms-3">
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    aria-current="page"
+                    href="./index.html"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    aria-current="page"
+                    href="./src/html/listings.html"
+                    >All Listings</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    aria-current="page"
+                    href="./src/html/profile.html"
+                    >Profile</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    aria-current="page"
+                    href="./src/html/login.html"
+                    >Sign in / Sign up</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
     </header>
 
     <main>
-      <!-- Insert Searchbar -->
-      <!-- Insert dropdown/checkmarks to sort items -->
-      <!-- API inserts of the ones with the least time until deadline 
-       API Insert:
-            <div>
-                <img src="$[itemimg]">
-                <h3>$[itemname]</h3>
-                <p>$[itemprice]</p>
-                <p>$[itemdeadline]</p>
-            </div>
-        -->
+      <div>
+        <!-- Insert Searchbar -->
+        <!-- Insert dropdown/checkmarks to sort items -->
+      </div>
+      <div
+        class="allListingsContainer d-flex flex-wrap col-12 justify-content-evenly mt-3"
+      ></div>
     </main>
+    <footer class="bg-primary mt-3 pt-1 d-flex justify-content-center">
+      <p class="mt-3 text-light inter">@legalstuff</p>
+    </footer>
   </body>
 </html>
