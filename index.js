@@ -12,7 +12,7 @@ async function landingListings() {
       (listing) => listing.media.length > 0,
     );
 
-    filteredListings.slice(0, 17).forEach(function (listing) {
+    filteredListings.slice(0, 6).forEach(function (listing) {
       const endDate = new Date(listing.endsAt);
       const options = { day: "numeric", month: "numeric", year: "2-digit" };
       const formattedEndDate = endDate.toLocaleDateString(undefined, options);
@@ -21,10 +21,10 @@ async function landingListings() {
       const latestBidAmount = latestBid ? latestBid.amount : "No bids";
 
       landingContainer.innerHTML += `<div class="col-5">
-      <img class="thumbnailImage" src="${listing.media[0].url}">
-      <h3>${listing.title}</h3>
+      <img class="thumbnailImage" src="${listing.media[0].url}" alt="${listing.media[0].alt}">
+      <h3 class="arimoItalic">${listing.title}</h3>
       <div class="d-flex">
-        <p class="me-3"> ${latestBidAmount}</p>
+        <p class="me-auto"><i class="bi bi-coin"></i> ${latestBidAmount}</p>
         <p>Ends: ${formattedEndDate}</p>
       </div>
         </div>`;
@@ -35,3 +35,13 @@ async function landingListings() {
 }
 
 landingListings();
+
+/* API renders an icon in top right corner.
+- This icon should display a placeholder icon and direct to login/signup page if no user is logged in.
+- If logged in, the icon should display the user's avatar instead and direct to the profile page */
+
+/* If logged in:
+- Profile should appear in the navbar as an option and signin/signup should not
+If NOT logged in:
+- Signin/signup should appear in the navbar and profile should not
+ */
