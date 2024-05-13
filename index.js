@@ -45,3 +45,5 @@ landingListings();
 If NOT logged in:
 - Signin/signup should appear in the navbar and profile should not
  */
+
+/* Change the API call to have each listing displayed be an anchor tag that directs to listing specific page */
