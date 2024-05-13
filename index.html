@@ -20,8 +20,7 @@
   </head>
   <body>
     <header>
-      <nav class="navbar fixed-top bg-primary">
-        <!-- Change color -->
+      <nav class="navbar navbar-dark fixed-top bg-primary">
         <div class="container-fluid">
           <button
             class="navbar-toggler"
@@ -37,10 +36,9 @@
             class="avatarIcon"
             src="https://fastly.picsum.photos/id/40/4106/2806.jpg?hmac=MY3ra98ut044LaWPEKwZowgydHZ_rZZUuOHrc3mL5mI"
           />
-          <!-- Insert avatar icon here -->
 
           <div
-            class="offcanvas offcanvas-start"
+            class="offcanvas offcanvas-start text-bg-primary"
             tabindex="-1"
             id="offcanvasNavbar"
             aria-labelledby="offcanvasNavbarLabel"
@@ -48,17 +46,17 @@
             <div class="offcanvas-header">
               <button
                 type="button"
-                class="btn-close"
+                class="btn-close btn-close-white"
                 data-bs-dismiss="offcanvas"
                 aria-label="Close"
               ></button>
-              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+              <h1 class="offcanvas-title mx-auto" id="offcanvasNavbarLabel">
                 BESTBIDS
-              </h5>
+              </h1>
             </div>
 
             <div class="offcanvas-body">
-              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <ul class="navbar-nav flex-grow-1 pe-3 ms-3">
                 <li class="nav-item">
                   <a
                     class="nav-link active"
@@ -99,11 +97,11 @@
     </header>
 
     <main>
-      <img />
+      <img class="img-banner" src="./assets/images/banner.png" />
       <!-- Insert image banner here -->
-      <h2>Ending soon!</h2>
+      <h2 class="ms-3">Featured listings:</h2>
       <div
-        class="landingContainer d-flex flex-wrap col-12 justify-content-evenly mt-5"
+        class="landingContainer d-flex flex-wrap col-12 justify-content-evenly mt-3"
       >
         <!-- <div class="col-5">
           <img class="col-12" src="./assets/images/item1.jpg" />

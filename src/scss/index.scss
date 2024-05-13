@@ -19,12 +19,24 @@ body {
   border-radius: 50%;
 }
 
+.img-banner {
+  margin: 4em auto 2em;
+  display: block;
+  max-width: 100%;
+  object-fit: cover;
+}
+
 .navbar-toggler-icon {
   color: white;
 }
 
-h1 {
-  font-weight: bold;
+.nav-item {
+  margin: auto;
+  display: block;
+}
+
+h1,
+a {
   font-family: Inter;
 }
 
