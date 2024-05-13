@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="../../dist/css/index.css" />
   </head>
   <body>
-    <header>
+    <header class="mb-5">
       <nav class="navbar navbar-dark fixed-top bg-primary">
         <div class="container-fluid">
           <button
@@ -64,7 +64,7 @@
                   <a
                     class="nav-link active"
                     aria-current="page"
-                    href="./index.html"
+                    href="../../index.html"
                     >Home</a
                   >
                 </li>
@@ -99,9 +99,16 @@
       </nav>
     </header>
 
-    <main>
-      <div>
-        <!-- Insert Searchbar -->
+    <main class="mt-5">
+      <div class="col-10 mx-auto">
+        <form class="d-flex">
+          <input
+            class="form-control"
+            type="search"
+            placeholder="Search posts"
+            id="searchBar"
+          />
+        </form>
         <!-- Insert dropdown/checkmarks to sort items -->
       </div>
       <div

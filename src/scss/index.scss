@@ -60,3 +60,7 @@ p {
 
 $blue: #424769 !default;
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+a {
+  text-decoration: none;
+}

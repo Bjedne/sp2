@@ -20,14 +20,18 @@ async function landingListings() {
       const latestBid = listing.bids[listing.bids.length - 1];
       const latestBidAmount = latestBid ? latestBid.amount : "No bids";
 
-      landingContainer.innerHTML += `<div class="col-5">
+      landingContainer.innerHTML += `
+      <div class="col-5">
+      <a href="./src/html/item.html/${listing.id}">
       <img class="thumbnailImage" src="${listing.media[0].url}" alt="${listing.media[0].alt}">
       <h3 class="arimoItalic">${listing.title}</h3>
       <div class="d-flex">
         <p class="me-auto"><i class="bi bi-coin"></i> ${latestBidAmount}</p>
         <p>Ends: ${formattedEndDate}</p>
       </div>
-        </div>`;
+      </a>
+        </div>
+        `;
     });
   } catch (error) {
     console.log(error);
