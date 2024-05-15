@@ -14,6 +14,7 @@
       crossorigin="anonymous"
       defer
     ></script>
+    <script src="../js/handlers/register.js" defer type="module"></script>
     <link rel="stylesheet" href="../../dist/css/index.css" />
   </head>
   <body>
@@ -23,12 +24,7 @@
     <main class="d-flex flex-column justify-content-center mx-5 mt-4">
       <h1 class="mb-4 inter">Create an account</h1>
       <div class="d-flex flex-column">
-        <form
-          action="./html/profile.html"
-          method="post"
-          class="login-form mb-2"
-          id="login"
-        >
+        <form class="login-form mb-2" id="registerForm">
           <label for="usernameReg" class="mb-1 inter">Username</label>
           <input
             type="text"
@@ -71,7 +67,7 @@
             name="avatar"
             placeholder="Avatar URL"
           />
-          <button type="button" class="btn btn-primary w-100 p-2 mt-4">
+          <button type="submit" class="btn btn-primary w-100 p-2 mt-4">
             Create an Account
           </button>
         </form>
