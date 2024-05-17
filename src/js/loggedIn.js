@@ -10,7 +10,13 @@ export function checkIfLoggedIn() {
       const avatarIconLink = document.getElementById("avatarLink");
 
       if (isLoggedIn) {
-        avatarIconLink.href = "./src/html/profile.html";
+        const currentPath = window.location.pathname;
+        const levelsUp = currentPath.split("/").length - 2;
+        const relativePath = "../".repeat(levelsUp);
+        const targetPath = relativePath + "/src/html/profile.html";
+
+        avatarIconLink.href = targetPath;
+
         const elementsToHide = document.querySelectorAll(
           ".hide-when-logged-in",
         );

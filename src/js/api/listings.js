@@ -1,5 +1,6 @@
 import { getListings } from "./index.js";
 const allListingsContainer = document.querySelector(".allListingsContainer");
+import { checkIfLoggedIn } from "../loggedIn.js";
 
 async function allListings() {
   try {
@@ -37,3 +38,4 @@ async function allListings() {
 }
 
 allListings();
+checkIfLoggedIn();
