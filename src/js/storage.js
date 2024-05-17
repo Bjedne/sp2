@@ -8,8 +8,4 @@ export default {
     if (data) return JSON.parse(data);
     else return null;
   },
-
-  clear: () => {
-    localStorage.clear();
-  },
 };
