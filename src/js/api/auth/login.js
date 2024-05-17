@@ -22,8 +22,9 @@ export async function loginUser(email, password) {
       const { accessToken, ...profile } = data.data;
       storage.save("token", accessToken);
       storage.save("profile", profile);
+      localStorage.setItem("isLoggedIn", "true");
       setTimeout(() => {
-        window.location.href = "/profile/";
+        window.location.href = "../../../../index.html";
       }, 500);
     } else {
       alert("Incorrect username or password");

@@ -32,10 +32,12 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <h1 class="navbar-brand text-white mt-2 inter">BESTBIDS</h1>
-          <img
-            class="avatarIcon"
-            src="https://fastly.picsum.photos/id/40/4106/2806.jpg?hmac=MY3ra98ut044LaWPEKwZowgydHZ_rZZUuOHrc3mL5mI"
-          />
+          <a href="./src/html/login.html" id="avatarLink"
+            ><img
+              class="avatarIcon"
+              id="avatarIcon"
+              src="./assets/images/user.png"
+          /></a>
 
           <div
             class="offcanvas offcanvas-start text-bg-primary"
@@ -78,7 +80,7 @@
                 </li>
                 <li class="nav-item">
                   <a
-                    class="nav-link active"
+                    class="nav-link active hidden show-when-logged-in"
                     aria-current="page"
                     href="./src/html/profile.html"
                     >Profile</a
@@ -86,7 +88,7 @@
                 </li>
                 <li class="nav-item">
                   <a
-                    class="nav-link active"
+                    class="nav-link active hide-when-logged-in"
                     aria-current="page"
                     href="./src/html/login.html"
                     >Sign in / Sign up</a

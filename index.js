@@ -40,14 +40,40 @@ async function landingListings() {
 
 landingListings();
 
-/* API renders an icon in top right corner.
-- This icon should display a placeholder icon and direct to login/signup page if no user is logged in.
-- If logged in, the icon should display the user's avatar instead and direct to the profile page */
+const storedUserData = localStorage.getItem("profile");
 
-/* If logged in:
-- Profile should appear in the navbar as an option and signin/signup should not
-If NOT logged in:
-- Signin/signup should appear in the navbar and profile should not
- */
+if (storedUserData) {
+  const userData = JSON.parse(storedUserData);
+  console.log(userData);
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+    const avatarIconLink = document.getElementById("avatarLink");
+
+    if (isLoggedIn) {
+      avatarIconLink.href = "./src/html/profile.html";
+      const elementsToHide = document.querySelectorAll(".hide-when-logged-in");
+      elementsToHide.forEach((element) => {
+        element.classList.add("hidden");
+      });
+
+      const elementsToShow = document.querySelectorAll(".show-when-logged-in");
+      elementsToShow.forEach((element) => {
+        element.classList.remove("hidden");
+      });
+
+      const avatarImg = document.getElementById("avatarIcon");
+      if (avatarImg && userData.avatar) {
+        avatarImg.src = userData.avatar.url;
+        avatarImg.alt = userData.avatar.alt || "User Avatar";
+      }
+    } else {
+      const elementsToShow = document.querySelectorAll(".show-when-logged-out");
+      elementsToShow.forEach((element) => {
+        element.classList.remove("hidden");
+      });
+    }
+  });
+}
 
 /* Change the API call to have each listing displayed be an anchor tag that directs to listing specific page */

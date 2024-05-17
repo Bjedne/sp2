@@ -10777,4 +10777,8 @@ a {
   text-decoration: none;
 }
 
+.hidden {
+  display: none;
+}
+
 /*# sourceMappingURL=index.css.map */
