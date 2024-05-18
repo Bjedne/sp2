@@ -90,7 +90,47 @@
     </header>
 
     <main class="mt-5 vh-100">
-      <div class="col-4 container">
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="changeAvatarModal"
+        tabindex="-1"
+        aria-labelledby="changeAvatarModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="changeAvatarModalLabel">
+                Change your Avatar
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form class="mb-2" id="changeAvatarForm">
+                <input
+                  required
+                  type="url"
+                  class="form-control mb-4"
+                  name="avatar"
+                  id="avatarInput"
+                  placeholder="Avatar URL"
+                />
+                <button type="submit" class="btn btn-primary" id="updateBtn">
+                  Save changes
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-4 col-lg-2 container position-relative">
         <div
           class="ratio ratio-1x1 rounded-circle overflow-hidden img-thumbnail"
         >
@@ -100,6 +140,14 @@
             id="avatarProfile"
           />
         </div>
+        <button
+          class="btn btn-warning border position-absolute top-100 start-100 translate-middle rounded-circle"
+          id="changeAvatar"
+          data-bs-toggle="modal"
+          data-bs-target="#changeAvatarModal"
+        >
+          <i class="bi bi-pencil-square"></i>
+        </button>
       </div>
       <div class="mx-auto col-10 text-center mt-2">
         <h1 id="usernameProfile">Username</h1>
@@ -108,6 +156,7 @@
       </div>
 
       <div class="mt-4" id="profileListings">
+        <h1>No listings found</h1>
         <!-- API Inserts listings made by the user -->
       </div>
       <div class="d-flex justify-content-center">
