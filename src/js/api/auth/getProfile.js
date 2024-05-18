@@ -17,7 +17,7 @@ export default async function getProfile() {
     });
 
     const data = await response.json();
-    console.log(data);
+    /*  console.log(data); */
 
     if (data) {
       return data.data;

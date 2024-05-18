@@ -3,7 +3,6 @@ export function checkIfLoggedIn() {
 
   if (storedUserData) {
     const userData = JSON.parse(storedUserData);
-    console.log(userData);
 
     document.addEventListener("DOMContentLoaded", () => {
       const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";

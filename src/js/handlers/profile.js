@@ -1,5 +1,5 @@
 import { checkIfLoggedIn } from "../loggedIn.js";
-import getProfile from "../api/auth/getProfile.js";
+import { generateProfilePage } from "../generate/profilePage.js";
 
 const signOutBtn = document.getElementById("signOutBtn");
 signOutBtn.addEventListener("click", function () {
@@ -8,4 +8,4 @@ signOutBtn.addEventListener("click", function () {
 });
 
 checkIfLoggedIn();
-getProfile();
+generateProfilePage();

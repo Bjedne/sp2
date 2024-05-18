@@ -74,3 +74,9 @@ a {
 .hidden {
   display: none;
 }
+
+.profile-thumbnail {
+  object-position: center;
+  object-fit: cover;
+  max-width: 100%;
+}
