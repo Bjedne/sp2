@@ -35,13 +35,20 @@ async function updateAvatarFromAPI() {
 
 export function checkIfLoggedIn() {
   const storedUserData = localStorage.getItem("profile");
+  const avatarIconLink = document.getElementById("avatarLink");
+
+  const currentPath = window.location.pathname;
+  const levelsUp = currentPath.split("/").length - 2;
+  const relativePath = "../".repeat(levelsUp);
+  const targetPath = relativePath + "/src/html/login.html";
+
+  avatarIconLink.href = targetPath;
 
   if (storedUserData) {
     const userData = JSON.parse(storedUserData);
 
     document.addEventListener("DOMContentLoaded", () => {
       const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-      const avatarIconLink = document.getElementById("avatarLink");
 
       if (isLoggedIn) {
         const currentPath = window.location.pathname;
