@@ -17,5 +17,6 @@ export default async function updateAvatar(body) {
   });
 
   const data = await response.json();
+  location.reload();
   console.log(data);
 }
