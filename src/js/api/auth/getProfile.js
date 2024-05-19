@@ -17,12 +17,11 @@ export default async function getProfile() {
     });
 
     const data = await response.json();
-    /*  console.log(data); */
 
     if (data) {
       return data.data;
     }
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 }

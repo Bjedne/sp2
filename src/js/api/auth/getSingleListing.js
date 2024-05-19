@@ -12,10 +12,9 @@ export async function getSingleListing() {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const listing = await response.json();
-      console.log("Listing fetched:", listing);
       generateSingleListing(listing);
     } catch (error) {
-      console.error("Error fetching the listing:", error);
+      console.error(error);
     }
   }
 }

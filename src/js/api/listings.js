@@ -14,7 +14,6 @@ async function allListings(searchQuery = "") {
     noResultsMessage.style.display = "none";
 
     const listings = await getListings();
-    console.log(listings);
 
     const filteredListings = listings.data.filter(
       (listing) =>
@@ -47,7 +46,7 @@ async function allListings(searchQuery = "") {
       });
     }
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 }
 

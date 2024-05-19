@@ -5,7 +5,6 @@ export async function generateProfilePage() {
   const avatar = document.querySelector("#avatarProfile");
   const username = document.querySelector("#usernameProfile");
   const credits = document.querySelector("#creditsProfile");
-  console.log(profile);
 
   avatar.src = profile.avatar.url;
   username.innerHTML = profile.name;

@@ -11,18 +11,16 @@ export default async function registration(body) {
     });
 
     const data = await response.json();
-    console.log(data);
 
     if (response.ok) {
       alert("Account created. Please log in.");
       window.location.href = "login.html";
     } else {
-      // Handle server errors or validation errors
-      alert(data.message || "Registration failed. Please try again.");
+      alert(data.errors[0].message || "Registration failed. Please try again.");
     }
     return data;
   } catch (error) {
-    console.log(error);
+    console.error(error);
     alert("An error occurred. Please try again.");
   }
 }

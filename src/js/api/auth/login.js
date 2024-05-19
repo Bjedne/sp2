@@ -13,6 +13,7 @@ export async function loginUser(email, password) {
     });
 
     if (!response.ok) {
+      alert("Invalid credentials");
       throw new Error("Invalid credentials");
     }
 
@@ -33,8 +34,6 @@ export async function loginUser(email, password) {
 
     return data;
   } catch (error) {
-    // Handle errors
-    console.error("Error logging in:", error.message);
-    throw error;
+    console.error(error);
   }
 }

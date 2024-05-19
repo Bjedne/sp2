@@ -2,6 +2,15 @@ import { postListing } from "../api/auth/postCreateListing.js";
 
 const createListingForm = document.querySelector("#createListingForm");
 
+async function isValidUrl(url) {
+  try {
+    const response = await fetch(url, { method: "HEAD" });
+    return response.ok;
+  } catch {
+    return false;
+  }
+}
+
 export function createListing() {
   createListingForm.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -13,7 +22,6 @@ export function createListing() {
       "#createListingDeadline",
     ).value;
 
-    // Create the media array and only include media objects with non-empty URL values
     const mediaUrls = [
       createListingForm.querySelector("#createListingImg1").value,
       createListingForm.querySelector("#createListingImg2").value,
@@ -24,6 +32,14 @@ export function createListing() {
       .filter((url) => url.trim() !== "")
       .map((url) => ({ url }));
 
+    for (const mediaItem of media) {
+      const isValid = await isValidUrl(mediaItem.url);
+      if (!isValid) {
+        alert(`The URL ${mediaItem.url} is not valid or reachable.`);
+        return;
+      }
+    }
+
     const body = {
       title,
       description,
@@ -33,11 +49,11 @@ export function createListing() {
 
     try {
       const listingId = await postListing(body);
+
       alert("Listing created!");
-      // Redirect to the newly created listing
       window.location.href = `item.html?id=${listingId}`;
     } catch (error) {
-      console.error("Error creating listing:", error);
+      console.error(error);
       alert("Failed to create listing. Please try again.");
     }
   });
