@@ -18,7 +18,7 @@
     <script src="../js/api/listings.js" type="module" defer></script>
     <link rel="stylesheet" href="../../dist/css/index.css" />
   </head>
-  <body>
+  <body class="vh-100 d-flex flex-column">
     <header class="mb-5">
       <nav class="navbar navbar-dark fixed-top bg-primary">
         <div class="container-fluid">
@@ -101,7 +101,88 @@
       </nav>
     </header>
 
-    <main class="mt-5 vh-100">
+    <main class="mt-5 flex-grow-1">
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="createListingModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Create Listing
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form class="d-flex flex-column">
+                <label for="createListingTitle"><h2>Title</h2></label>
+                <input
+                  class="form-control"
+                  type="text"
+                  id="createListingTitle"
+                  placeholder="Title of your listing"
+                />
+
+                <label for="createListingTitle" class="mt-3"
+                  ><h2>Description</h2></label
+                >
+                <textarea
+                  class="form-control"
+                  type="textarea"
+                  id="createListingTitle"
+                  placeholder="Describe your listing"
+                ></textarea>
+                <h2 class="mt-3">Upload Images</h2>
+                <label for="createListingTitle" class="mt-1">Image 1</label>
+                <input
+                  class="form-control"
+                  type="url"
+                  id="createListingTitle"
+                  placeholder="Enter a URL"
+                />
+                <label for="createListingTitle" class="mt-3">Image 2</label>
+                <input
+                  class="form-control"
+                  type="url"
+                  id="createListingTitle"
+                  placeholder="Enter a URL"
+                />
+                <label for="createListingTitle" class="mt-3">Image 3</label>
+                <input
+                  class="form-control"
+                  type="url"
+                  id="createListingTitle"
+                  placeholder="Enter a URL"
+                />
+                <label class="mt-4" for="">Enter Deadline</label>
+                <input
+                  type="datetime-local"
+                  class="form-control"
+                  id="newListingInput4"
+                  name="deadline"
+                  required=""
+                />
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary">
+                Publish Listing
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="col-10 mx-auto row">
         <form class="d-flex col-12">
           <input
@@ -113,7 +194,13 @@
           <button class="btn btn-primary ms-2 col-3" id="searchButton">
             Search
           </button>
-          <button class="btn bg-warning ms-2 col-3" id="createListingBtn">
+          <button
+            type="button"
+            class="btn bg-warning ms-2 col-3"
+            id="createListingBtn"
+            data-bs-toggle="modal"
+            data-bs-target="#createListingModal"
+          >
             Create Listing
           </button>
         </form>

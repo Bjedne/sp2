@@ -18,7 +18,7 @@
     <script src="./index.js" defer type="module"></script>
     <link rel="stylesheet" href="./dist/css/index.css" />
   </head>
-  <body>
+  <body class="vh-100 d-flex flex-column">
     <header>
       <nav class="navbar navbar-dark fixed-top bg-primary">
         <div class="container-fluid">
@@ -101,13 +101,28 @@
       </nav>
     </header>
 
-    <main>
+    <main class="flex-grow-1">
       <img class="img-banner" src="./assets/images/banner.png" />
-      <h2 class="ms-3">Featured listings:</h2>
       <div
-        class="landingContainer d-flex flex-wrap col-12 justify-content-evenly mt-3"
+        class="container mx-auto d-block text-center arimoItalic d-flex flex-column mt-5 gap-4 border-1 col-10"
       >
-        <!-- API inserts listings -->
+        <h2>Become BEST BUDS</h2>
+        <h2>with the BEST BIDS</h2>
+        <h2>at the BEST PRICES</h2>
+      </div>
+      <div class="container text-center mt-5">
+        <a href="./src/html/listings.html"
+          ><button class="btn btn-warning p-3">
+            <h3 class="inter">EXPLORE AUCTION</h3>
+          </button></a
+        >
+      </div>
+      <div class="text-center mt-5">
+        <h4><i class="bi bi-info-circle"></i> Great Support</h4>
+        <h4 class="mt-3"><i class="bi bi-safe"></i> Safe Auctions</h4>
+        <h4 class="mt-3">
+          <i class="bi bi-globe-americas"></i> Good for the Environment
+        </h4>
       </div>
     </main>
 

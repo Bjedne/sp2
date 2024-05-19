@@ -1,5 +1,6 @@
 import { checkIfLoggedIn } from "../loggedIn.js";
 import { apiPath, APIKey } from "../constants.js";
+import { formatTimeLeft } from "../timeLeft.js";
 import storage from "../storage.js";
 
 async function getSingleListing() {
@@ -31,6 +32,7 @@ async function getSingleListing() {
 const generateSingleListing = (listing) => {
   console.log(listing);
   const container = document.getElementById("singleListingContainer");
+  const formattedTimeLeft = formatTimeLeft(listing.data.endsAt);
 
   const lastBidAmount =
     listing.data.bids.length > 0
@@ -53,15 +55,30 @@ const generateSingleListing = (listing) => {
       </div>
     </div>
     <div class="col-10 container">
-      <img
-        class="img-fluid rounded"
-        src="${listing.data.media[0].url}"
-        id="itemImg"
-      />
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner" id="carouselContainer">
+    
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
       <p class="mt-2" id="itemDescription">
         ${listing.data.description}
       </p>
-      <p id="auctionEnds">${listing.data.endsAt}</p>
+      <p id="auctionEnds">Ends in: ${formattedTimeLeft}</p>
     </div>
     <div class="col-10 container">
       <div class="d-flex gap-2" id="tags">
@@ -108,6 +125,37 @@ const generateSingleListing = (listing) => {
         <button class="btn btn-warning">Sign in to place bid</button></a>
     </div>
   `;
+
+  const carouselContainer = document.getElementById("carouselContainer");
+  carouselContainer.innerHTML = "";
+
+  const carouselItemsHtml = listing.data.media
+    .map(
+      (media, index) => `
+    <div class="carousel-item ${index === 0 ? "active" : ""}">
+      <img src="${media.url}" class="d-block w-100" alt="Image ${index + 1}">
+    </div>
+  `,
+    )
+    .join("");
+
+  // Set the generated HTML as the content of the carousel container
+  carouselContainer.innerHTML = carouselItemsHtml;
+
+  // Hide carousel control arrows if there is only one image
+  const carouselIndicators = document.querySelector(".carousel-indicators");
+  const carouselControls = document.querySelectorAll(".carousel-control");
+  const carouselPrev = document.querySelector(".carousel-control-prev-icon");
+  const carouselNext = document.querySelector(".carousel-control-next-icon");
+
+  if (listing.data.media.length <= 1) {
+    // Hide carousel indicators
+    carouselIndicators.style.display = "none";
+    carouselPrev.style.display = "none";
+    carouselNext.style.display = "none";
+    // Hide carousel controls
+    carouselControls.forEach((control) => (control.style.display = "none"));
+  }
 
   // Add event listener for the "Place Bid" button
   document

@@ -1,5 +1,6 @@
 import { getListings } from "./index.js";
 import { checkIfLoggedIn } from "../loggedIn.js";
+import { formatTimeLeft } from "../timeLeft.js";
 
 const allListingsContainer = document.querySelector(".allListingsContainer");
 const searchBar = document.getElementById("searchBar");
@@ -25,9 +26,7 @@ async function allListings(searchQuery = "") {
     } else {
       noResultsMessage.style.display = "none";
       filteredListings.slice(0, 20).forEach(function (listing) {
-        const endDate = new Date(listing.endsAt);
-        const options = { day: "numeric", month: "numeric", year: "2-digit" };
-        const formattedEndDate = endDate.toLocaleDateString(undefined, options);
+        const formattedTimeLeft = formatTimeLeft(listing.endsAt);
 
         const latestBid = listing.bids[listing.bids.length - 1];
         const latestBidAmount = latestBid ? latestBid.amount : "No bids";
@@ -39,7 +38,7 @@ async function allListings(searchQuery = "") {
               <h3 class="arimoItalic">${listing.title}</h3>
               <div class="d-flex">
                 <p class="me-auto"><i class="bi bi-coin"></i> ${latestBidAmount}</p>
-                <p>Ends: ${formattedEndDate}</p>
+                <p>Ends: ${formattedTimeLeft}</p>
               </div>
             </a>
           </div>
