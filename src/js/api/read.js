@@ -11,8 +11,3 @@ export async function getListings(limit = 30) {
 
   /* throw new Error(); */
 }
-
-/* export async function getListing(id) {
-  const response =
-    await fetch();
-} */

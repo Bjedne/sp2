@@ -101,18 +101,29 @@
       </nav>
     </header>
 
-    <main class="mt-5">
-      <div class="col-10 mx-auto">
-        <form class="d-flex">
+    <main class="mt-5 vh-100">
+      <div class="col-10 mx-auto row">
+        <form class="d-flex col-12">
           <input
             class="form-control"
             type="search"
             placeholder="Search posts"
             id="searchBar"
           />
-          <button class="btn btn-primary ms-2" type="submit">Search</button>
+          <button class="btn btn-primary ms-2 col-3" id="searchButton">
+            Search
+          </button>
+          <button class="btn bg-warning ms-2 col-3" id="createListingBtn">
+            Create Listing
+          </button>
         </form>
-        <!-- Insert dropdown/checkmarks to sort items -->
+      </div>
+      <div
+        class="container mt-4 ms-5"
+        id="noResultsMessage"
+        style="display: none"
+      >
+        <h2>No listings found</h2>
       </div>
       <div
         class="allListingsContainer d-flex flex-wrap col-12 justify-content-evenly mt-3"
