@@ -1,6 +1,7 @@
 import { getListings } from "./index.js";
 import { checkIfLoggedIn } from "../loggedIn.js";
 import { formatTimeLeft } from "../timeLeft.js";
+import { createListing } from "../listeners/postListing.js";
 
 const allListingsContainer = document.querySelector(".allListingsContainer");
 const searchBar = document.getElementById("searchBar");
@@ -53,6 +54,7 @@ async function allListings(searchQuery = "") {
 document.addEventListener("DOMContentLoaded", () => {
   allListings();
   checkIfLoggedIn();
+  createListing();
 });
 
 searchButton.addEventListener("click", (event) => {

@@ -124,60 +124,65 @@
               ></button>
             </div>
             <div class="modal-body">
-              <form class="d-flex flex-column">
+              <form class="d-flex flex-column" id="createListingForm">
                 <label for="createListingTitle"><h2>Title</h2></label>
                 <input
                   class="form-control"
                   type="text"
                   id="createListingTitle"
                   placeholder="Title of your listing"
+                  required
                 />
 
-                <label for="createListingTitle" class="mt-3"
+                <label for="createListingDesc" class="mt-3"
                   ><h2>Description</h2></label
                 >
                 <textarea
                   class="form-control"
                   type="textarea"
-                  id="createListingTitle"
+                  id="createListingDesc"
                   placeholder="Describe your listing"
+                  required
                 ></textarea>
-                <h2 class="mt-3">Upload Images</h2>
-                <label for="createListingTitle" class="mt-1">Image 1</label>
-                <input
-                  class="form-control"
-                  type="url"
-                  id="createListingTitle"
-                  placeholder="Enter a URL"
-                />
-                <label for="createListingTitle" class="mt-3">Image 2</label>
-                <input
-                  class="form-control"
-                  type="url"
-                  id="createListingTitle"
-                  placeholder="Enter a URL"
-                />
-                <label for="createListingTitle" class="mt-3">Image 3</label>
-                <input
-                  class="form-control"
-                  type="url"
-                  id="createListingTitle"
-                  placeholder="Enter a URL"
-                />
-                <label class="mt-4" for="">Enter Deadline</label>
+                <label class="mt-3" for="createListingDeadline"
+                  ><h3>Enter Deadline</h3></label
+                >
                 <input
                   type="datetime-local"
                   class="form-control"
-                  id="newListingInput4"
+                  id="createListingDeadline"
                   name="deadline"
-                  required=""
+                  required
                 />
+                <h2 class="mt-3">Upload Images</h2>
+                <label for="createListingImg1" class="mt-1">Image 1</label>
+                <input
+                  class="form-control"
+                  type="url"
+                  id="createListingImg1"
+                  placeholder="Enter a URL"
+                  required
+                />
+                <label for="createListingImg2" class="mt-3">Image 2</label>
+                <input
+                  class="form-control"
+                  type="url"
+                  id="createListingImg2"
+                  placeholder="Enter a URL"
+                />
+                <label for="createListingImg3" class="mt-3">Image 3</label>
+                <input
+                  class="form-control"
+                  type="url"
+                  id="createListingImg3"
+                  placeholder="Enter a URL"
+                />
+                <div class="modal-footer">
+                  <button type="submit" class="btn btn-primary">
+                    Publish Listing
+                  </button>
+                </div>
               </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary">
-                Publish Listing
-              </button>
             </div>
           </div>
         </div>
@@ -205,11 +210,7 @@
           </button>
         </form>
       </div>
-      <div
-        class="container mt-4 ms-5"
-        id="noResultsMessage"
-        style="display: none"
-      >
+      <div class="container mt-4" id="noResultsMessage" style="display: none">
         <h2>No listings found</h2>
       </div>
       <div
