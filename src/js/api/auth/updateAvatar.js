@@ -6,17 +6,28 @@ export default async function updateAvatar(body) {
   const name = storage.get("profile").name;
   const url = apiPath + "auction/profiles/" + name;
 
-  const response = await fetch(url, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
-      "X-Noroff-API-Key": APIKey,
-    },
-    body: JSON.stringify(body),
-  });
+  try {
+    const response = await fetch(url, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+        "X-Noroff-API-Key": APIKey,
+      },
+      body: JSON.stringify(body),
+    });
 
-  const data = await response.json();
-  location.reload();
-  console.log(data);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    console.log(data);
+    location.reload();
+  } catch (error) {
+    console.error(error);
+    alert(
+      "Failed to update avatar. Please check the URL or your network connection and try again.",
+    );
+  }
 }

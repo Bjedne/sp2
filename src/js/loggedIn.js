@@ -2,26 +2,19 @@ import getProfile from "../js/api/auth/getProfile.js";
 
 async function updateAvatarFromAPI() {
   try {
-    // Fetch the new avatar data from the API
     const newAvatarData = await getProfile();
 
-    // Retrieve the existing profile data from localStorage
     const storedUserData = localStorage.getItem("profile");
     if (storedUserData) {
       const userData = JSON.parse(storedUserData);
 
-      console.log(userData);
-
-      // Update the avatar part of the profile data
       userData.avatar = {
         url: newAvatarData.avatar.url,
         alt: newAvatarData.alt || "User Avatar",
       };
 
-      // Save the updated profile data back to localStorage
       localStorage.setItem("profile", JSON.stringify(userData));
 
-      // Optionally update the UI immediately
       const avatarImg = document.getElementById("avatarIcon");
       if (avatarImg) {
         avatarImg.src = userData.avatar.url;
@@ -29,7 +22,7 @@ async function updateAvatarFromAPI() {
       }
     }
   } catch (error) {
-    console.error("Failed to update avatar:", error);
+    alert("Failed to update avatar:", error);
   }
 }
 

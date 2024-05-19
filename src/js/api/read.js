@@ -7,7 +7,7 @@ export async function getListings(limit = 60) {
 
   if (response.ok) {
     return await response.json();
+  } else {
+    console.error("Something went wrong");
   }
-
-  /* throw new Error(); */
 }

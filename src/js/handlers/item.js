@@ -24,13 +24,12 @@ async function getSingleListing() {
       const listing = await response.json();
       generateSingleListing(listing);
     } catch (error) {
-      console.error("Error fetching the listing:", error);
+      console.error(error);
     }
   }
 }
 
 const generateSingleListing = (listing) => {
-  console.log(listing);
   const container = document.getElementById("singleListingContainer");
   const formattedTimeLeft = formatTimeLeft(listing.data.endsAt);
 
@@ -139,25 +138,21 @@ const generateSingleListing = (listing) => {
     )
     .join("");
 
-  // Set the generated HTML as the content of the carousel container
   carouselContainer.innerHTML = carouselItemsHtml;
 
-  // Hide carousel control arrows if there is only one image
   const carouselIndicators = document.querySelector(".carousel-indicators");
   const carouselControls = document.querySelectorAll(".carousel-control");
   const carouselPrev = document.querySelector(".carousel-control-prev-icon");
   const carouselNext = document.querySelector(".carousel-control-next-icon");
 
   if (listing.data.media.length <= 1) {
-    // Hide carousel indicators
     carouselIndicators.style.display = "none";
     carouselPrev.style.display = "none";
     carouselNext.style.display = "none";
-    // Hide carousel controls
+
     carouselControls.forEach((control) => (control.style.display = "none"));
   }
 
-  // Add event listener for the "Place Bid" button
   document
     .getElementById("btnPlaceBid")
     .addEventListener("click", () => placeBid(listing.data.id));
@@ -192,7 +187,7 @@ async function placeBid(listingId) {
     alert("Bid placed successfully!");
     updateListingBids(listingId);
   } catch (error) {
-    console.error("Error placing bid:", error);
+    console.error(error);
     alert("Failed to place bid. Please try again.");
   }
 }
@@ -223,7 +218,7 @@ async function updateListingBids(listingId) {
       <i class="bi bi-coin"> ${listing.data.bids.length > 0 ? listing.data.bids[listing.data.bids.length - 1].amount : 0}</i>
     `;
   } catch (error) {
-    console.error("Error updating bid history:", error);
+    console.error(error);
   }
 }
 

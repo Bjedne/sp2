@@ -16,10 +16,11 @@ export async function postListing(body) {
       body: JSON.stringify(body),
     });
     const data = await response.json();
+
     if (data) {
       return data.data.id;
     }
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 }

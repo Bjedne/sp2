@@ -22,7 +22,6 @@ export async function getUserListings() {
 
   profileListing.data.forEach((listing) => {
     const formattedTimeLeft = formatTimeLeft(listing.endsAt);
-    console.log(listing);
     profileListings.innerHTML += `<a
     href="./item.html?id=${listing.id}"
     class="card container d-flex flex-row justify-content-between gap-3"
