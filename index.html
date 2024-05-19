@@ -21,7 +21,7 @@
   <body class="vh-100 d-flex flex-column">
     <header>
       <nav class="navbar navbar-dark fixed-top bg-primary">
-        <div class="container-fluid">
+        <div class="container-fluid ms-2 me-2 ms-lg-5 me-lg-5">
           <button
             class="navbar-toggler"
             type="button"
@@ -31,10 +31,10 @@
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <h1 class="navbar-brand text-white mt-2 inter">BESTBIDS</h1>
+          <h1 class="navbar-brand text-white mt-2 inter fs-1">BESTBIDS</h1>
           <a href="./src/html/login.html" id="avatarLink"
             ><img
-              class="avatarIcon"
+              class="avatarIcon bg-white p-1"
               id="avatarIcon"
               src="./assets/images/user.png"
           /></a>
@@ -61,7 +61,7 @@
             </div>
 
             <div class="offcanvas-body inter">
-              <ul class="navbar-nav flex-grow-1 pe-3 ms-3">
+              <ul class="navbar-nav flex-grow-1 pe-3 ms-3 fs-4">
                 <li class="nav-item">
                   <a
                     class="nav-link active"
@@ -102,7 +102,10 @@
     </header>
 
     <main class="flex-grow-1">
-      <img class="img-banner" src="./assets/images/banner.png" />
+      <img
+        class="img-banner container-fluid col-lg-8 d-block mx-auto"
+        src="./assets/images/banner.png"
+      />
       <div
         class="container mx-auto d-block text-center arimoItalic d-flex flex-column mt-5 gap-4 border-1 col-10"
       >
@@ -113,7 +116,7 @@
       <div class="container text-center mt-5">
         <a href="./src/html/listings.html"
           ><button class="btn btn-warning p-3">
-            <h3 class="inter">EXPLORE AUCTION</h3>
+            <h3 class="inter">EXPLORE AUCTIONS</h3>
           </button></a
         >
       </div>

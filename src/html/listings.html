@@ -19,9 +19,9 @@
     <link rel="stylesheet" href="../../dist/css/index.css" />
   </head>
   <body class="vh-100 d-flex flex-column">
-    <header class="mb-5">
+    <header class="mb-3 mb-lg-4">
       <nav class="navbar navbar-dark fixed-top bg-primary">
-        <div class="container-fluid">
+        <div class="container-fluid ms-2 me-2 ms-lg-5 me-lg-5">
           <button
             class="navbar-toggler"
             type="button"
@@ -31,10 +31,10 @@
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <h1 class="navbar-brand text-white mt-2 inter">BESTBIDS</h1>
+          <h1 class="navbar-brand text-white mt-2 inter fs-1">BESTBIDS</h1>
           <a href="./src/html/login.html" id="avatarLink"
             ><img
-              class="avatarIcon"
+              class="avatarIcon bg-white p-1"
               id="avatarIcon"
               src="../../assets/images/user.png"
           /></a>
@@ -61,7 +61,7 @@
             </div>
 
             <div class="offcanvas-body inter">
-              <ul class="navbar-nav flex-grow-1 pe-3 ms-3">
+              <ul class="navbar-nav flex-grow-1 pe-3 ms-3 fs-4">
                 <li class="nav-item">
                   <a
                     class="nav-link active"
@@ -101,8 +101,7 @@
       </nav>
     </header>
 
-    <main class="mt-5 flex-grow-1">
-      <!-- Modal -->
+    <main class="flex-grow-1">
       <div
         class="modal fade"
         id="createListingModal"
@@ -189,7 +188,7 @@
       </div>
 
       <div class="col-10 mx-auto row">
-        <form class="d-flex col-12">
+        <form class="d-flex col-12 mb-3">
           <input
             class="form-control"
             type="search"
@@ -214,7 +213,7 @@
         <h2>No listings found</h2>
       </div>
       <div
-        class="allListingsContainer d-flex flex-wrap col-12 justify-content-evenly mt-3"
+        class="allListingsContainer container text-center d-flex flex-wrap col-12 justify-content-evenly mt-3"
       ></div>
     </main>
     <footer class="bg-primary mt-3 pt-1 d-flex justify-content-center">

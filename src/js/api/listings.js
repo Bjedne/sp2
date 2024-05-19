@@ -33,12 +33,12 @@ async function allListings(searchQuery = "") {
         const latestBidAmount = latestBid ? latestBid.amount : "No bids";
 
         allListingsContainer.innerHTML += `
-          <div class="col-5">
+          <div class="col-5 col-md-4 col-lg-3">
             <a href="./item.html?id=${listing.id}">
               <img class="thumbnailImage" src="${listing.media[0].url}" alt="${listing.media[0].alt}">
               <h3 class="arimoItalic">${listing.title}</h3>
-              <div class="d-flex">
-                <p class="me-auto"><i class="bi bi-coin"></i> ${latestBidAmount}</p>
+              <div class="d-flex justify-content-evenly">
+                <p><i class="bi bi-coin"></i> ${latestBidAmount}</p>
                 <p>Ends: ${formattedTimeLeft}</p>
               </div>
             </a>

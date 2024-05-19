@@ -45,8 +45,8 @@ const generateSingleListing = (listing) => {
 
   container.innerHTML = `
     <div class="container text-center">
-      <div class="row justify-content-start">
-        <a href="javascript:history.back()" class="col-3">
+      <div class="row justify-content-start align-items-center">
+        <a href="javascript:history.back()" class="col-3 fs-1">
           <i class="bi bi-arrow-left"></i>
         </a>
         <div class="col-6">
@@ -132,8 +132,8 @@ const generateSingleListing = (listing) => {
   const carouselItemsHtml = listing.data.media
     .map(
       (media, index) => `
-    <div class="carousel-item ${index === 0 ? "active" : ""}">
-      <img src="${media.url}" class="d-block w-100" alt="Image ${index + 1}">
+    <div class="container carousel-item ${index === 0 ? "active" : ""}">
+      <img src="${media.url}" class="d-block mx-auto w-100" alt="Image ${index + 1}">
     </div>
   `,
     )
