@@ -1,6 +1,7 @@
 import { checkIfLoggedIn } from "../loggedIn.js";
 import { generateProfilePage } from "../generate/profilePage.js";
 import { changeAvatar } from "../listeners/changeAvatar.js";
+import { getUserListings } from "../api/auth/getUserListings.js";
 
 const signOutBtn = document.getElementById("signOutBtn");
 signOutBtn.addEventListener("click", function () {
@@ -11,3 +12,4 @@ signOutBtn.addEventListener("click", function () {
 generateProfilePage();
 changeAvatar();
 checkIfLoggedIn();
+getUserListings();
