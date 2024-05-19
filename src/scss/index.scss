@@ -10,10 +10,8 @@
   font-style: italic;
 }
 
-@import "../../node_modules/bootstrap-icons/font/bootstrap-icons.css";
-
 body {
-  margin: 0;
+  padding-top: 84px;
   line-height: inherit;
   min-height: 100vh;
   display: flex;
@@ -34,11 +32,11 @@ body {
   border-radius: 50%;
 }
 
-.img-banner {
-  margin: 4em auto 2em;
-  display: block;
-  max-width: 100%;
-  object-fit: cover;
+@media screen and (min-width: 900px) {
+  .avatarIcon {
+    height: 40px;
+    width: 40px;
+  }
 }
 
 .img-banner-login {
@@ -80,4 +78,8 @@ a {
   object-position: center;
   object-fit: cover;
   max-width: 100%;
+}
+
+.caroImg {
+  max-width: 800px;
 }

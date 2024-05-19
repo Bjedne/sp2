@@ -2,7 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap");
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
-@import "../../node_modules/bootstrap-icons/font/bootstrap-icons.css";
 .inter {
   font-family: Inter;
 }
@@ -13,7 +12,7 @@
 }
 
 body {
-  margin: 0;
+  padding-top: 84px;
   line-height: inherit;
   min-height: 100vh;
   display: flex;
@@ -34,13 +33,12 @@ body {
   border-radius: 50%;
 }
 
-.img-banner {
-  margin: 4em auto 2em;
-  display: block;
-  max-width: 100%;
-  object-fit: cover;
+@media screen and (min-width: 900px) {
+  .avatarIcon {
+    height: 40px;
+    width: 40px;
+  }
 }
-
 .img-banner-login {
   display: block;
   margin: 0 auto;
@@ -10786,6 +10784,10 @@ a {
   object-position: center;
   object-fit: cover;
   max-width: 100%;
+}
+
+.caroImg {
+  max-width: 800px;
 }
 
 /*# sourceMappingURL=index.css.map */
